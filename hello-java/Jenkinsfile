@@ -1,0 +1,21 @@
+pipeline {
+    agent {
+        docker {
+            image 'eclipse-temurin:21-jdk'
+        }
+    }
+
+    stages {
+        stage('Compile') {
+            steps {
+                sh 'javac -d out src/HelloWorld.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                sh 'java -cp out HelloWorld'
+            }
+        }
+    }
+}
