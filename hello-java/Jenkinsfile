@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                sh 'javac -d out src/HelloWorld.java'
+                sh 'javac -d out hello-java/src/HelloWorld.java'
             }
         }
 
